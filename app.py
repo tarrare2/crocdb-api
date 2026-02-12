@@ -17,7 +17,7 @@ limiter = Limiter(
     app=app,
     meta_limits=['15 per hour'],
     default_limits=['30 per 1 second'],
-    storage_uri='memcached://localhost:11211',
+    storage_uri='memory://',
     storage_options={},
     key_prefix='crocdb_api_'
 )
