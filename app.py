@@ -8,7 +8,13 @@ from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from http import HTTPStatus
 import api
-
+import sys
+from pathlib import Path
+if getattr(sys, 'frozen', False):
+    BASE_DIR = Path(sys._MEIPASS) / 'mangrove'
+else:
+    BASE_DIR = Path(__file__).parent
+    
 app = Flask(__name__)
 app.json.sort_keys = False
 
